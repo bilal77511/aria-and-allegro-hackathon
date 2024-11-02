@@ -72,9 +72,18 @@ def generate_video(scenes):
     response.raise_for_status()
     return response.json().get('data')
 
-def query_video_status(request_id, wait_time=120):
-    """Query video generation status and return video link"""
-    time.sleep(wait_time)
+def query_video_status(request_id, max_retries=5, initial_wait=150):
+    """
+    Query video status with retries and better error handling
+    
+    Args:
+        request_id (str): Video request ID
+        max_retries (int): Maximum number of retry attempts
+        initial_wait (int): Initial wait time in seconds
+    """
+    # Wait for initial processing time
+    print(f"Waiting initial {initial_wait} seconds for video processing...")
+    time.sleep(initial_wait)
 
     url = f"{os.getenv('ARIA_BASE_URL')}/videoQuery"
     headers = {
@@ -82,11 +91,29 @@ def query_video_status(request_id, wait_time=120):
     }
     params = {"requestId": request_id}
 
-    response = requests.get(url, headers=headers, params=params)
-    response.raise_for_status()
-    return response.json().get('data')
+    for attempt in range(max_retries):
+        try:
+            response = requests.get(url, headers=headers, params=params)
+            response.raise_for_status()
+            data = response.json()
+            
+            # Check if video link is available
+            video_link = data.get('data')
+            if video_link and video_link.strip():  # Ensure link is not empty string
+                return video_link
+            
+            print(f"Attempt {attempt + 1}/{max_retries}: Video still processing, waiting 30 seconds...")
+            time.sleep(30)  # Wait 30 seconds before next attempt
+            
+        except requests.exceptions.RequestException as e:
+            print(f"Attempt {attempt + 1}/{max_retries} failed: {str(e)}")
+            if attempt < max_retries - 1:  # Don't sleep on the last attempt
+                time.sleep(30)
+            continue
+    
+    raise Exception("Failed to get video link after maximum retries")
 
-def process_travel_image(image_path, wait_time=120):
+def process_travel_image(image_path, initial_wait=150, max_retries=5):
     """Main function to process travel image and generate video"""
     try:
         # Initialize OpenAI client
@@ -105,7 +132,7 @@ def process_travel_image(image_path, wait_time=120):
         print(f"Video generation started with request ID: {request_id}")
 
         # Query video status
-        video_link = query_video_status(request_id, wait_time)
+        video_link = query_video_status(request_id, max_retries, initial_wait)
         print(f"Video link: {video_link}")
 
         return video_link
