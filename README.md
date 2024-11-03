@@ -7,7 +7,7 @@
 [![OpenAI](https://img.shields.io/badge/OpenAI-412991.svg?style=for-the-badge&logo=OpenAI&logoColor=white)](https://openai.com)
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-## 🎬 Poetry Video Generator
+## 🎬 Pulse & Prism
 
 Turn your words into stunning videos using AI-powered poetry generation, text-to-speech, and visual creation.
 
