@@ -1,2 +1,7 @@
 .env
 .venv
+final_poetry_video.mp4
+output/
+videos/
+__pycache__/
+.venv/

@@ -2,6 +2,7 @@ from aria import AriaTextGenerator
 from tts import TextToSpeech
 from allegro import VideoGenerator
 from video_downloader import VideoDownloader
+from video_editor import VideoEditor  # Import the video editor
 from tqdm import tqdm
 
 def main():
@@ -10,6 +11,7 @@ def main():
     tts_generator = TextToSpeech()
     video_generator = VideoGenerator()
     video_downloader = VideoDownloader()
+    video_editor = VideoEditor()  # Initialize video editor
     
     try:
         # Generate a poem
@@ -54,6 +56,16 @@ def main():
             print("\nVideo Information:")
             print(f"Location: {video_info['path']}")
             print(f"Size: {video_info['size_mb']:.2f} MB")
+            
+            # Create final video with audio
+            print("\nCreating final video with audio...")
+            output_path = "final_poetry_video.mp4"
+            video_editor.create_video_with_audio(
+                video_path=str(video_path),
+                audio_path=str(audio_path),
+                output_path=output_path
+            )
+            print(f"Final video created successfully at: {output_path}")
             
         else:
             print(f"Video generation started. Request ID: {request_id}")
