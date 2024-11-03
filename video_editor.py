@@ -1,11 +1,53 @@
+import cv2
+import numpy as np
 from moviepy.editor import VideoFileClip, AudioFileClip, concatenate_videoclips
 from pathlib import Path
-import tempfile
 
 class VideoEditor:
     def __init__(self):
-        """Initialize the Video Editor using temporary directory"""
-        self.output_dir = Path(tempfile.gettempdir())  # Use system temp directory
+        """Initialize the Video Editor"""
+        self.output_dir = Path(__file__).parent / "output"
+        self.output_dir.mkdir(exist_ok=True)
+
+    def reverse_video(self, video_path, output_path):
+        """
+        Reverse a video
+        
+        Args:
+            video_path (str): Path to input video
+            output_path (str): Path for reversed video
+        """
+        try:
+            # Open the original video
+            cap = cv2.VideoCapture(video_path)
+            
+            # Get properties
+            fps = cap.get(cv2.CAP_PROP_FPS)
+            frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+            width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+            height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+            
+            # Read frames into a list
+            frames = []
+            while cap.isOpened():
+                ret, frame = cap.read()
+                if not ret:
+                    break
+                frames.append(frame)
+            
+            cap.release()
+
+            # Write reversed frames
+            fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+            out = cv2.VideoWriter(output_path, fourcc, fps, (width, height))
+
+            for frame in reversed(frames):
+                out.write(frame)
+
+            out.release()
+            
+        except Exception as e:
+            raise Exception(f"Failed to reverse video: {str(e)}")
 
     def create_video_with_audio(self, video_path, audio_path, output_path=None):
         """
@@ -23,14 +65,13 @@ class VideoEditor:
             if output_path is None:
                 output_path = str(self.output_dir / "final_video.mp4")
             
-            # Load original video
+            # Create reversed video
+            reversed_path = str(self.output_dir / "temp_reversed.mp4")
+            self.reverse_video(video_path, reversed_path)
+            
+            # Load videos and audio
             original_video = VideoFileClip(video_path)
-            
-            # Create reversed version using moviepy instead of OpenCV
-            reversed_video = original_video.copy()
-            reversed_video = reversed_video.fx(vfx.time_mirror)
-            
-            # Load audio
+            reversed_video = VideoFileClip(reversed_path)
             audio = AudioFileClip(audio_path)
             
             # Combine videos
@@ -47,6 +88,7 @@ class VideoEditor:
             final_video = final_video.set_audio(audio)
 
             # Export
+            print("Exporting final video...")
             final_video.write_videofile(
                 output_path,
                 codec="libx264",
@@ -60,6 +102,8 @@ class VideoEditor:
             reversed_video.close()
             audio.close()
             final_video.close()
+            if Path(reversed_path).exists():
+                Path(reversed_path).unlink()
                 
             return output_path
             
