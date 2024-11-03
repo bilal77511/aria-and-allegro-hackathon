@@ -1,143 +1,115 @@
 # 🌈 Pulse & Prism
 
-> *Where Poetry Meets Motion, and Words Come Alive* ✨
+> *Transforming Words into Visual Symphony* ✨
+
+[![Made with Love](https://img.shields.io/badge/Made%20with-🧡-orange?style=for-the-badge)](https://github.com/yourusername/pulse-and-prism)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org)
+[![OpenAI](https://img.shields.io/badge/OpenAI-412991.svg?style=for-the-badge&logo=OpenAI&logoColor=white)](https://openai.com)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 ## 🎬 Poetry Video Generator
 
-Transform your words into mesmerizing multimedia experiences with our AI-powered poetry video generator. Combining the creative forces of ARIA AI for poetic composition, OpenAI's cutting-edge text-to-speech, and Allegro AI's visual artistry.
+Turn your words into stunning videos using AI-powered poetry generation, text-to-speech, and visual creation.
 
-✧･ﾟ: *✧･ﾟ:* 　　 *:･ﾟ✧*:･ﾟ✧
 
-## ⭐ Key Features
+## ⚡ Key Features
 
-- 🎭 **Artistic Poetry Generation**
-  - Create enchanting verses in multiple styles
-  - Support for 20+ languages and dialects
-  - Custom theme and mood selection
+## Features 🚀
+- 📝 Generate unique poems in various styles and languages
+- 🗣️ Convert text to natural-sounding speech
+- 🎬 Create AI-powered background videos
+- 🎨 Apply professional video effects and audio
+- 🌐 Easy-to-use web interface
 
-- 🗣️ **Lifelike Voice Synthesis**
-  - Natural-sounding speech with emotion
-  - Multiple voice options and accents
-  - Adjustable speech parameters
-
-- 🎨 **Visual Magic**
-  - AI-generated scenic backgrounds
-  - Dynamic visual effects
-  - Real-time video rendering
-
-- 🎵 **Audio Excellence**
-  - Background music generation
-  - Audio synchronization
-  - Professional sound mixing
-
-## 💫 Quick Start
-
-### 📋 Prerequisites
-
-```markdown
-🔹 Python 3.8+
-🔹 OpenAI API key
-🔹 ARIA API key
-🔹 Allegro API key
-```
-
-### ⚡ Installation
-
-1. **Clone & Enter:**
+## Requirements 📋
 ```bash
-git clone https://github.com/yourusername/pulse-and-prism.git
-cd pulse-and-prism
+- Python 3.8+
+- OpenAI API key
+- ARIA API key
+- Allegro API key
 ```
 
-2. **Set Up Environment:**
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-3. **Configure API Keys:**
-```env
-# .env file
-OPENAI_API_KEY=your_openai_api_key
-ARIA_API_KEY=your_aria_api_key
-ARIA_BASE_URL=https://api.rhymes.ai/v1
-ALLEGRO_API_KEY=your_allegro_api_key
-```
-
-## 🎮 Usage
+## 💫 Experience The Magic
 
 ### 🌐 Web Interface
 ```bash
-streamlit run app.py
+streamlit run app.py --theme dark
 ```
 
-### 💻 Command Line
+### ⌨️ Command Line
 ```bash
-python main.py --style ethereal --language en --duration 60
+python main.py
 ```
 
 ⭑ ⭒ ⭑ ⭒ ⭑ ⭒ ⭑ ⭒ ⭑
 
-## 📂 Project Architecture
-
+## Project Structure 📂
 ```
-pulse-and-prism/
-├── 🎨 core/
-│   ├── poetry_engine.py     # ARIA AI Integration
-│   ├── voice_synth.py       # OpenAI TTS Engine
-│   ├── visual_gen.py        # Allegro AI Handler
-│   └── effects.py           # Video Effects Suite
-├── 🛠️ utils/
-│   ├── video_processor.py   # Video Processing
-│   ├── audio_mixer.py       # Audio Processing
-│   └── helpers.py          # Utility Functions
-└── 🎯 interface/
-    ├── web_app.py          # Streamlit Interface
-    └── cli.py             # Command Line Tool
+poetry-video-generator/
+├── aria.py           # Poetry generation
+├── tts.py           # Text-to-speech conversion
+├── allegro.py       # Video generation
+├── video_downloader.py # Video downloading
+├── video_editor.py  # Video editing
+├── app.py          # Web interface
+└── main.py         # Command line interface
 ```
 
-## 🚀 Advanced Features
+## 🌟 Premium Features
 
-- 🎪 **Scene Customization**
-  - Custom visual themes
-  - Scene transition effects
-  - Color grading options
+## License 📜
+This project is licensed under the MIT License.
 
-- 🎵 **Audio Enhancement**
-  - Custom background scores
-  - Voice modulation
-  - Sound effects library
 
-- 📱 **Export Options**
-  - Multiple video formats
-  - Quality presets
-  - Social media optimization
+## 🤝 Meet Our Creative Team
 
-✧ ･ﾟ ✧ ･ﾟ ✧ ･ﾟ ✧
+### Core Development Team
 
-## 🤝 Join Our Creative Community
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/bilal77511">
+        <b>MUHAMMAD BILAL</b><br>
+        <sub>Lead Developer</sub><br>
+        <a href="https://www.linkedin.com/in/muhammad-bilal-a75782280/">LinkedIn</a>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/tsolami">
+        <b>TIJANI .S. OLALEKAN</b><br>
+        <sub>AI Specialist</sub><br>
+        <a href="https://www.linkedin.com/in/sotijani/">LinkedIn</a>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/muhammadibrahim313">
+        <b>MUHAMMAD IBRAHIM QASMI</b><br>
+        <sub>Backend Architect</sub><br>
+        <a href="https://www.linkedin.com/in/muhammad-ibrahim-qasmi-9876a1297/">LinkedIn</a>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/mj-awad17">
+        <b>MUHAMMAD JAWAD</b><br>
+        <sub>Frontend Master</sub><br>
+        <a href="https://www.linkedin.com/in/muhammad-jawad-86507b201/">LinkedIn</a>
+      </a>
+    </td>
+  </tr>
+</table>
 
-1. 🍴 Fork the repository
-2. 🌟 Create your feature branch
-3. 💫 Make your magical changes
-4. 🚀 Push to the branch
-5. 🎯 Open a Pull Request
+## 📜 License & Recognition
 
-## 📜 License & Credits
-
-- 📄 Licensed under MIT
-- 🙏 Built with love by the community
-- 🌟 Special thanks to ARIA, OpenAI, and Allegro AI
-
-## 🌐 Connect With Us
-MUHAMMAD BILAL (github)[https://github.com/bilal77511] (LinkedIn)[https://www.linkedin.com/in/muhammad-bilal-a75782280/]
-TIJANI .S. OLALEKAN (github)[https://github.com/tsolami] (LinkedIn)[https://www.linkedin.com/in/sotijani/]
-MUHAMMAD IBRAHIM QASMI (github)[https://github.com/muhammadibrahim313] (LinkedIn)[https://www.linkedin.com/in/muhammad-ibrahim-qasmi-9876a1297/]
-MUHAMMAD JAWAD (github)[https://github.com/mj-awad17/] (LinkedIn)[https://www.linkedin.com/in/muhammad-jawad-86507b201/]
+- 📄 Distributed under MIT License
+- 🏆 Built by developers, for creatives
+- 🙌 Special thanks to our amazing contributors
+- 💝 Powered by ARIA, OpenAI, and Allegro AI
 
 ════════════════════════
 
 <p align="center">
-Made with 💖 for the love of poetry and technology
+<b>Crafted with 💖 by the B-TAJI Crew</b><br>
+<sub>Turning Poetry into Visual Magic</sub>
 </p>
