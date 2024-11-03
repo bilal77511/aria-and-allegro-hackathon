@@ -11,7 +11,7 @@ from video_editor import VideoEditor
 
 # Set page config
 st.set_page_config(
-    page_title="Poetry Video Generator",
+    page_title="Pulse & Prism",
     page_icon="🎥",
     layout="wide"
 )
@@ -56,7 +56,7 @@ def initialize_components():
 components = initialize_components()
 
 # Main title
-st.title("🎭 Poetry Video Generator")
+st.title("🎭 Pulse & Prism")
 st.markdown("Generate beautiful poems and transform them into videos with background music.")
 
 # Sidebar for configuration
