@@ -93,7 +93,7 @@ This project is licensed under the MIT License.
     <td align="center">
       <a href="https://github.com/mj-awad17">
         <b>MUHAMMAD JAWAD</b><br>
-        <sub>Frontend Master</sub><br>
+        <sub>Data Analyst & UI Designer</sub><br>
         <a href="https://www.linkedin.com/in/muhammad-jawad-86507b201/">LinkedIn</a>
       </a>
     </td>
