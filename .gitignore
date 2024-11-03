@@ -1,7 +1,14 @@
+# Environmental variables
 .env
+
+# Virtual environment
 .venv
+
+# Compiled Python files
+__pycache__/
+*.pyc
+
+# Video output
 final_poetry_video.mp4
 output/
 videos/
-__pycache__/
-.venv/
