@@ -165,7 +165,7 @@ def show_landing_page():
 
 def show_poetry_generator():
     """Display the poetry generator interface"""
-    st.title("🎭 Poetry Video Generator")
+    st.title("🎭 Pulse & Prism")
     
     # Initialize session state
     for key in ['generated_poem', 'audio_path', 'video_path', 'final_video_path']:
