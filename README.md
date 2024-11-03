@@ -1,4 +1,4 @@
-# 🌈 Pulse & Prism
+# 🌈 Pulse & Prism 
 
 > *Transforming Words into Visual Symphony* ✨
 
