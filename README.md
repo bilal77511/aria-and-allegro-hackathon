@@ -6,7 +6,7 @@
 
 Transform your words into mesmerizing multimedia experiences with our AI-powered poetry video generator. Combining the creative forces of ARIA AI for poetic composition, OpenAI's cutting-edge text-to-speech, and Allegro AI's visual artistry.
 
-![Divider](https://raw.githubusercontent.com/yourusername/poetry-video-generator/main/assets/divider.png)
+✧･ﾟ: *✧･ﾟ:* 　　 *:･ﾟ✧*:･ﾟ✧
 
 ## ⭐ Key Features
 
@@ -77,6 +77,8 @@ streamlit run app.py
 python main.py --style ethereal --language en --duration 60
 ```
 
+⭑ ⭒ ⭑ ⭒ ⭑ ⭒ ⭑ ⭒ ⭑
+
 ## 📂 Project Architecture
 
 ```
@@ -112,6 +114,8 @@ pulse-and-prism/
   - Quality presets
   - Social media optimization
 
+✧ ･ﾟ ✧ ･ﾟ ✧ ･ﾟ ✧
+
 ## 🤝 Join Our Creative Community
 
 1. 🍴 Fork the repository
@@ -133,7 +137,7 @@ pulse-and-prism/
 - 🐱 GitHub: [@yourusername](https://github.com/yourusername)
 - 🔗 LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
 
----
+════════════════════════
 
 <p align="center">
 Made with 💖 for the love of poetry and technology
