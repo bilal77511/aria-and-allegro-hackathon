@@ -1,12 +1,15 @@
 from aria import AriaTextGenerator
 from tts import TextToSpeech
 from allegro import VideoGenerator
+from video_downloader import VideoDownloader
+from tqdm import tqdm
 
 def main():
-    # Initialize the generators
+    # Initialize all components
     aria_generator = AriaTextGenerator()
     tts_generator = TextToSpeech()
     video_generator = VideoGenerator()
+    video_downloader = VideoDownloader()
     
     try:
         # Generate a poem
@@ -27,7 +30,7 @@ def main():
         )
         print(f"Audio generated successfully at: {audio_path}")
         
-        # Generate a video
+        # Generate video
         print("\nGenerating video...")
         prompt = "A serene natural scene with gentle movements, perfect for poetry background"
         request_id, video_url = video_generator.create_video(
@@ -38,6 +41,20 @@ def main():
         if video_url:
             print(f"Video generated successfully!")
             print(f"Video URL: {video_url}")
+            
+            # Download the video
+            print("\nDownloading video...")
+            video_path = video_downloader.download_video(
+                url=video_url,
+                filename="poetry_background.mp4"
+            )
+            
+            # Get and display video info
+            video_info = video_downloader.get_video_info(video_path)
+            print("\nVideo Information:")
+            print(f"Location: {video_info['path']}")
+            print(f"Size: {video_info['size_mb']:.2f} MB")
+            
         else:
             print(f"Video generation started. Request ID: {request_id}")
             print("Check status later using the request ID")
