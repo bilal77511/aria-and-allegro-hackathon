@@ -131,11 +131,10 @@ pulse-and-prism/
 - 🌟 Special thanks to ARIA, OpenAI, and Allegro AI
 
 ## 🌐 Connect With Us
-
-👨‍💻 **Lead Developer**: Your Name
-- 📧 Email: your.email@example.com
-- 🐱 GitHub: [@yourusername](https://github.com/yourusername)
-- 🔗 LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
+MUHAMMAD BILAL (github)[https://github.com/bilal77511] (LinkedIn)[https://www.linkedin.com/in/muhammad-bilal-a75782280/]
+TIJANI .S. OLALEKAN (github)[https://github.com/tsolami] (LinkedIn)[https://www.linkedin.com/in/sotijani/]
+MUHAMMAD IBRAHIM QASMI (github)[https://github.com/muhammadibrahim313] (LinkedIn)[https://www.linkedin.com/in/muhammad-ibrahim-qasmi-9876a1297/]
+MUHAMMAD JAWAD (github)[https://github.com/mj-awad17/] (LinkedIn)[https://www.linkedin.com/in/muhammad-jawad-86507b201/]
 
 ════════════════════════
 
