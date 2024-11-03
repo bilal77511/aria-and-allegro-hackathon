@@ -34,7 +34,7 @@ def main():
         
         # Generate video
         print("\nGenerating video...")
-        prompt = "A serene natural scene with gentle movements, perfect for poetry background"
+        prompt = "A serene natural scene with gentle movements, perfect for poetry background \n the poetry is "+ poem
         request_id, video_url = video_generator.create_video(
             prompt=prompt,
             wait_for_completion=True

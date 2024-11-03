@@ -22,3 +22,4 @@ requests
 opencv-python 
 moviepy 
 numpy
+streamlit
