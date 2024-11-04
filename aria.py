@@ -11,22 +11,35 @@ class AriaTextGenerator:
             api_key=os.getenv('ARIA_API_KEY')
         )
 
-    def generate_poem(self, style="Allama Iqbal", verses=2, language="english"):
+    def generate_poem(self, options, verses=1, language="english"):
         """
         Generate a poem using ARIA
         
         Args:
-            style (str): The style of poetry (default: "Allama Iqbal")
-            verses (int): Number of verses to generate (default: 2)
+            options (dict): Contains details like title, tone, style, and keywords.
+            verses (int): Number of verses to generate (default: 1)
             language (str): Language for the poem (default: "english")
             
         Returns:
             str: Generated poem
         """
+        title = options.get('title', 'a beautiful theme')
+        tone = options.get('tone', 'reflective')
+        style = options.get('style')
+        keywords = options.get('keywords')
+
+        # Construct the initial prompt
         prompt = f"""
-        Write a short, poem in {style} style in {language}.
-        motivating poem only {verses} verses
+        Write a short, {verses}-verse poem about {title}.
+        The tone should be {tone}, with simple, evocative language.
         """
+
+        # Conditionally add style and keywords if provided
+        if style:
+            prompt += f"\nThe style should reflect {style}."
+        if keywords:
+            prompt += f"\nUse the following keywords: {keywords}"
+
         
         try:
             response = self.client.chat.completions.create(
