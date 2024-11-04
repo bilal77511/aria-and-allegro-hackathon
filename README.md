@@ -33,7 +33,7 @@ Turn your words into stunning videos using AI-powered poetry generation, text-to
 
 ### 🌐 Web Interface
 ```bash
-streamlit run app.py --theme dark
+streamlit run 👨‍🔧_Pulse_&_prism_Intro.py
 ```
 
 ### ⌨️ Command Line
@@ -43,17 +43,6 @@ python main.py
 
 ⭑ ⭒ ⭑ ⭒ ⭑ ⭒ ⭑ ⭒ ⭑
 
-## Project Structure 📂
-```
-poetry-video-generator/
-├── aria.py           # Poetry generation
-├── tts.py           # Text-to-speech conversion
-├── allegro.py       # Video generation
-├── video_downloader.py # Video downloading
-├── video_editor.py  # Video editing
-├── app.py          # Web interface
-└── main.py         # Command line interface
-```
 
 ## 🌟 Premium Features
 
