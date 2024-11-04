@@ -14,10 +14,17 @@ def main():
     video_editor = VideoEditor()  # Initialize video editor
     
     try:
+        # Define the poem generation options
+        options = {
+            "title": "Nature's Beauty",
+            "tone": "serene",
+            "style": "classical",
+            "keywords": ["trees", "rivers", "sky"]
+        }
+
         # Generate a poem
         poem = aria_generator.generate_poem(
-            style="sad heartbroken",
-            verses=2,
+            options=options,
             language="english"
         )
         print("Generated Poem:")
