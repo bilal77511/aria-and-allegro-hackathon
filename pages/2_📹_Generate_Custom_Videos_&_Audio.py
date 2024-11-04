@@ -52,7 +52,7 @@ def main():
     st.set_page_config(page_title="Custom Content Generator", page_icon="📹", layout="wide")
     load_css()
     
-    st.markdown("<h1 class='main-title'>Custom Content Generator</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='main-title'>📹 Custom Content Generator</h1>", unsafe_allow_html=True)
     st.markdown("<p class='tagline'>Create custom audio and videos from your text</p>", unsafe_allow_html=True)
     
     # Initialize session state
