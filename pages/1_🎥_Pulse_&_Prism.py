@@ -118,7 +118,7 @@ def main():
     components = initialize_components()
     
     
-    st.markdown("<h1 class='main-title'>Pulse & Prism</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='main-title'>🎥 Pulse & Prism</h1>", unsafe_allow_html=True)
     st.markdown("<p class='tagline'> Generate beautiful poetry and transform them into videos</p>", unsafe_allow_html=True)
     
     # Define the language options
