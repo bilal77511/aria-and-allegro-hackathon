@@ -101,6 +101,7 @@ class VideoEditor:
             original_video.close()
             reversed_video.close()
             audio.close()
+            final_video.close()
             if Path(reversed_path).exists():
                 Path(reversed_path).unlink()
                 
