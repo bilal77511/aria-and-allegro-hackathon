@@ -30,7 +30,7 @@ class AriaTextGenerator:
 
         # Construct the initial prompt
         prompt = f"""
-        Write a short, {verses}-verse poem about {title}.
+        Write a short, {verses}-verse poem about {title} in {language} language.
         The tone should be {tone}, with simple, evocative language.
         """
 
