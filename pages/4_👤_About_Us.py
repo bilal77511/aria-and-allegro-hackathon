@@ -91,7 +91,7 @@ def about_page():
     
     
     st.markdown("<h1 class='main-title'>Pulse & Prism</h1>", unsafe_allow_html=True)
-    st.markdown("<p class='tagline'>Transform Your Words into Visual Poetry</p>", unsafe_allow_html=True)
+    #st.markdown("<p class='tagline'>Transform Your Words into Visual Poetry</p>", unsafe_allow_html=True)
 
     # Team Members
     st.markdown("<h2 class='section-header'>Meet the B-TAJI Crew</h2>", unsafe_allow_html=True)
