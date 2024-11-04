@@ -92,8 +92,8 @@ def main():
     # Introduction
     st.markdown("""
     <div class='intro-statement'>
-        <h3>🎭 Express Through Poetry</h3>
-        <p>Turn your emotions into beautiful poetry and transform them into captivating videos</p>
+        <h3>Revolutionize content creation by automating the process from text generation to video production.</h3>
+        <p>An AI-powered platform that enables users to generate personalized, high-quality content, effortlessly and quickly.</p>
         <h3>✨ Let Your Words Come Alive</h3>
     </div>
     """, unsafe_allow_html=True)
