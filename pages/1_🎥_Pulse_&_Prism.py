@@ -120,7 +120,12 @@ def main():
     
     st.markdown("<h1 class='main-title'>Pulse & Prism</h1>", unsafe_allow_html=True)
     st.markdown("<p class='tagline'> Generate beautiful poetry and transform them into videos with background music.</p>", unsafe_allow_html=True)
+    
+    # Define the language options
+    languages = {"English": "english", "Urdu": "urdu"}
 
+    # Define the voice options
+    voices = {"Onyx": "onyx", "Alloy": "alloy", "Echo": "echo", "Fable": "fable", "Nova": "nova", "Shimmer": "shimmer"}
     # Sidebar configuration
     with st.sidebar:
         st.header("Configuration")
@@ -130,8 +135,8 @@ def main():
             placeholder="Enter your desired style (e.g., sad, romantic, spiritual)"
         )
         verses = st.slider("Number of Verses", 1, 5, 2)
-        language = st.selectbox("Language", ["english", "urdu"])
-        voice = st.selectbox("Voice", ["onyx", "alloy", "echo", "fable", "nova", "shimmer"])
+        language = st.selectbox("Language", list(languages.keys()))
+        voice = st.selectbox("Voice", list(voices.keys()))
 
     # Main content tabs
     tabs = st.tabs(["Generate Poetry", "Create Audio", "Generate Video", "Final Result"])
@@ -150,7 +155,7 @@ def main():
                         st.session_state.generated_poem = components['aria'].generate_poem(
                             style=poetry_style,
                             verses=verses,
-                            language=language
+                            language=languages[language]
                         )
                         st.success("Poetry generated successfully!")
                     except Exception as e:
@@ -170,7 +175,7 @@ def main():
                         st.session_state.audio_path = components['tts'].generate_speech(
                             text=st.session_state.generated_poem,
                             filename="generated_poem.mp3",
-                            voice=voice
+                            voice=voices[voice]
                         )
                         st.success("Audio generated successfully!")
                     except Exception as e:
