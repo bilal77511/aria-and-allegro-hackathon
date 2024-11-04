@@ -59,6 +59,12 @@ components = initialize_components()
 st.title("🎭 Pulse & Prism")
 st.markdown("Generate beautiful poems and transform them into videos with background music.")
 
+# Define the language options
+languages = {"English": "english", "Urdu": "urdu"}
+
+# Define the voice options
+voices = {"Onyx": "onyx", "Alloy": "alloy", "Echo": "echo", "Fable": "fable", "Nova": "nova", "Shimmer": "shimmer"}
+
 # Sidebar for configuration
 with st.sidebar:
     st.header("Configuration")
@@ -68,8 +74,8 @@ with st.sidebar:
         placeholder="Enter your desired style (e.g., sad, romantic, spiritual)"
     )
     verses = st.slider("Number of Verses", 1, 5, 2)
-    language = st.selectbox("Language", ["english", "urdu"])
-    voice = st.selectbox("Voice", ["onyx", "alloy", "echo", "fable", "nova", "shimmer"])
+    language = st.selectbox("Language", list(languages.keys()))
+    voice = st.selectbox("Voice", list(voices.keys()))
 
 # Main content area
 tabs = st.tabs(["Generate Poetry", "Create Audio", "Generate Video", "Final Result"])
@@ -88,7 +94,7 @@ with tabs[0]:
                     st.session_state.generated_poem = components['aria'].generate_poem(
                         style=poetry_style,
                         verses=verses,
-                        language=language
+                        language=languages[language]
                     )
                     st.success("Poetry generated successfully!")
                 except Exception as e:
@@ -108,7 +114,7 @@ with tabs[1]:
                     st.session_state.audio_path = components['tts'].generate_speech(
                         text=st.session_state.generated_poem,
                         filename="generated_poem.mp3",
-                        voice=voice
+                        voice=voices[voice]
                     )
                     st.success("Audio generated successfully!")
                 except Exception as e:
