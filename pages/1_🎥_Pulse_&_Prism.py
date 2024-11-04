@@ -129,12 +129,11 @@ def main():
     # Sidebar configuration
     with st.sidebar:
         st.header("Configuration")
-        poetry_style = st.text_input(
-            "Poetry Style",
-            value="",
-            placeholder="Enter your desired style (e.g., sad, romantic, spiritual)"
-        )
+        title = st.text_input("Title", placeholder="Enter the title of your poem")
+        tone = st.text_input("Tone", placeholder="Enter the tone of your poem(e.g., reflective, serene)")
         verses = st.slider("Number of Verses", 1, 5, 2)
+        poetry_style = st.text_input("Poetry Style (Optional)", placeholder="Enter your desired style (e.g., sad, romantic, spiritual)")
+        keywords = st.text_input("Keywords (Optional)", placeholder="Enter keywords for your poem")
         language = st.selectbox("Language", list(languages.keys()))
         voice = st.selectbox("Voice", list(voices.keys()))
 
@@ -153,9 +152,14 @@ def main():
                 with st.spinner("Generating Using Aria..."):
                     try:
                         st.session_state.generated_poem = components['aria'].generate_poem(
-                            style=poetry_style,
-                            verses=verses,
-                            language=languages[language]
+                            options={
+                                "title": title,
+                                "tone": tone,
+                                "style": poetry_style,
+                                "keywords": keywords
+                            },
+                            language=languages[language],
+                            verses=verses
                         )
                         st.success("Poetry generated successfully!")
                     except Exception as e:
