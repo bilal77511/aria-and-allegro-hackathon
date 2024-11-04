@@ -204,7 +204,7 @@ def main():
                 if not video_prompt.strip():
                     st.error("Please enter a video prompt")
                 else:
-                    with st.spinner("Initiating video generation..."):
+                    with st.spinner("Initializing video generation. This will take at least 3 minutes, so go grab a cup of coffee ☕ and come back to see the magic"):
                         try:
                             request_id, video_url = components['video'].create_video(
                                 prompt=video_prompt,
@@ -217,7 +217,7 @@ def main():
                                     filename="poetry_background.mp4"
                                 )
                                 st.session_state.video_path = video_path
-                                st.success("Video generated and downloaded successfully!")
+                                st.success("Video generated successfully!")
                                 st.markdown(get_download_link(video_path, "Download Raw Video"), unsafe_allow_html=True)
                             
                         except Exception as e:
