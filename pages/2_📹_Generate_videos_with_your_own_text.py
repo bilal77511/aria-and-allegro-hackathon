@@ -78,12 +78,15 @@ def main():
         }
     
     components = initialize_components()
+
+    # Define the voice options
+    voices = {"Onyx": "onyx", "Alloy": "alloy", "Echo": "echo", "Fable": "fable", "Nova": "nova", "Shimmer": "shimmer"}
     
     # Text input section
     st.header("Enter Your Text")
     user_text = st.text_area("Your Text", height=150, 
                             placeholder="Enter the text you want to convert to speech...")
-    voice = st.selectbox("Select Voice", ["onyx", "alloy", "echo", "fable", "nova", "shimmer"])
+    voice = st.selectbox("Select Voice", list(voices.keys()))
     
     # Audio generation section
     st.header("Generate Audio")
@@ -93,7 +96,7 @@ def main():
                 audio_path = components['tts'].generate_speech(
                     text=user_text,
                     filename="custom_audio.mp3",
-                    voice=voice
+                    voice=voices[voice]
                 )
                 st.session_state.audio_path = str(audio_path)
                 st.success("Audio generated successfully!")
