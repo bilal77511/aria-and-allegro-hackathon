@@ -1,14 +1,15 @@
 from openai import OpenAI
 from dotenv import load_dotenv
 import os
+from config import Config
 
 class AriaTextGenerator:
     def __init__(self):
         """Initialize the ARIA text generator with API credentials"""
         load_dotenv()
         self.client = OpenAI(
-            base_url=os.getenv('ARIA_BASE_URL'),
-            api_key=os.getenv('ARIA_API_KEY')
+            base_url=Config.ARIA_BASE_URL,
+            api_key=Config.ARIA_API_KEY
         )
 
     def generate_poem(self, options, verses=1, language="english"):
