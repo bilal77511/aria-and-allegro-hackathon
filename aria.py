@@ -28,7 +28,7 @@ class AriaTextGenerator:
         style = options.get('style')
         keywords = options.get('keywords')
 
-        # Construct the initial prompt
+        # Construct the initial prompt 
         prompt = f"""
         Write a short, {verses}-verse poem about {title} in {language} language.
         The tone should be {tone}, with simple, evocative language.
