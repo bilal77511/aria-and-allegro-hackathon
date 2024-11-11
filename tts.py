@@ -30,7 +30,8 @@ class TextToSpeech:
             response = self.client.audio.speech.create(
                 model="tts-1",
                 voice=voice,
-                input=text
+                input=text,
+                speed=0.75
             )
 
             # Write the binary audio content to the file
