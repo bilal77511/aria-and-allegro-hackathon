@@ -130,7 +130,7 @@ def main():
     with st.sidebar:
         st.header("Configuration")
         title = st.text_input("Title", placeholder="Enter the title of your poem")
-        tone = st.text_input("Tone", placeholder="Enter the tone of your poem(e.g., reflective, serene)")
+        tone = st.text_input("Tone", placeholder="Enter the tone of your poem(e.g., conversational, formal, etc.)")
         verses = st.slider("Number of Verses", 1, 5, 2)
         poetry_style = st.text_input("Poetry Style (Optional)", placeholder="Enter your desired style (e.g., sad, romantic, spiritual)")
         keywords = st.text_input("Keywords (Optional)", placeholder="Enter keywords for your poem")
