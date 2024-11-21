@@ -12,3 +12,7 @@ __pycache__/
 final_poetry_video.mp4
 output/
 videos/
+
+# Audio output
+audio/
+*.mp3
