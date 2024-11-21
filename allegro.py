@@ -102,9 +102,11 @@ class VideoGenerator:
             print(f"Video generation started with request ID: {request_id}")
             
             if wait_for_completion:
+
+                wait_time = 180
                 # Wait for initial processing
-                print("Waiting 2 minutes for initial processing...")
-                time.sleep(120)
+                print(f"Waiting {wait_time / 60} minutes for initial processing...")
+                time.sleep(wait_time)
                 
                 # Query for video URL
                 video_url = self.query_video_status(request_id)
